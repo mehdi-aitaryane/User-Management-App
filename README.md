@@ -56,6 +56,16 @@ ng serve
 
 4. Access the application at http://localhost:4200 in your web browser.
 
+### Data Import
+
+1. Create umdb folder in your mysql upload folder
+
+2. Copy the images in User-Management-App/db folder to your mysql upload folder
+
+3. Edit the umdb.sql script
+
+4. Execute the mysql scipt
+
 ## Usage
 
 * Upon accessing the application, users can log in using their credentials.
