@@ -1,0 +1,11 @@
+<!-- breadcrumb.component.html -->
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="mx-md-5 mt-3 breadcrumb border p-3">
+  <ng-container *ngFor="let path of paths; let last = last; let i = index">
+    <ng-container *ngIf="!last">
+      <span class="breadcrumb-item">
+        <a [routerLink]="getPathLink(i)">{{ path }}</a>
+      </span>
+    </ng-container>
+    <span class="breadcrumb-item active" *ngIf="last">{{ path }}</span>
+  </ng-container>
+</nav>

@@ -1,0 +1,9 @@
+.input-group-append {
+    position: absolute;
+    right: 0;
+}
+
+.input-group-text {
+    background-color: transparent;
+    border: none;
+}

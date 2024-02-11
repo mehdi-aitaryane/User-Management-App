@@ -1,0 +1,19 @@
+<nav class="mx-md-5 navbar navbar-expand-lg  navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/">User Management System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a *ngIf="isVisitor" class="nav-link" routerLink="/login" >Login</a>
+            <a *ngIf="isVisitor" class="nav-link" routerLink="/register" >Register</a>
+            <a *ngIf="isAdmin" class="nav-link" routerLink="/admin/profile" >Manage Profile</a>
+            <a *ngIf="isAdmin" class="nav-link" routerLink="/admin/users" >Manage Users</a>
+            <a *ngIf="isUser" class="nav-link" routerLink="/user/profile" >Manage Profile</a>
+            <a *ngIf="!isVisitor" class="nav-link" routerLink="/" (click) = "logout()" >Logout</a>
+          </div>
+        </div>
+      </div>    
+</nav>
+  

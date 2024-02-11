@@ -1,0 +1,37 @@
+<app-breadcrumb [paths]="this.breadcrumbPaths"></app-breadcrumb>
+
+<div class="mx-md-5 border row">
+    <div class="col-md-6 mt-md-5 pt-md-5 text-center">
+        <i class="bi bi-person text-primary" style="font-size: 5em;"></i>
+        <h1 class="text-primary">User Management App</h1>
+        <p class="text-secondary">The best solution for inhancing your business.</p>
+    </div>
+
+    <div class="col-md-6 p-5">
+        <h2 class="card-title text-primary">Edit Profile</h2>
+        <form  novalidate class="needs-validation" (submit)="editProfile(firstname.value, lastname.value, username.value); $event.preventDefault()">
+            <div class="form-group my-2">
+                <label class="form-label text-secondary" for="firstname">Firstname</label>
+                <input [value]="profile?.firstname" class="form-control" placeholder="Firstname" formControlName="firstname" type="text" id="firstname" #firstname>
+                <div *ngIf="this.validationMessages != undefined &&  this.validationMessages.firstname != undefined" class="text-danger">
+                    {{this.validationMessages.firstname[0]}}
+                </div>        
+            </div>
+            <div class="form-group my-2">
+                <label class="text-secondary" for="lastname">Lastname</label>
+                <input [value]="profile?.lastname" class="form-control" placeholder="Lastname" formControlName="lastname" type="text" id="lastname" #lastname>        
+                <div *ngIf="this.validationMessages != undefined && this.validationMessages.lastname != undefined" class="text-danger">
+                    {{this.validationMessages.lastname[0]}}
+                </div>        
+            </div>
+            <div class="form-group my-2">
+                <label class="text-secondary" for="username">Username</label>
+                <input [value]="profile?.username" class="form-control" placeholder="Username" formControlName="username" type="text" id="username" #username>        
+                <div *ngIf="this.validationMessages != undefined &&  this.validationMessages.username != undefined" class="text-danger">
+                    {{this.validationMessages.username[0]}}
+                </div>        
+            </div>
+            <button type="submit" class="btn btn-primary my-2">Edit Profile</button>
+        </form>
+    </div>
+</div>

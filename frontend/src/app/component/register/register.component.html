@@ -1,0 +1,51 @@
+<app-breadcrumb [paths]="this.breadcrumbPaths"></app-breadcrumb>
+
+<div class="mx-md-5 border row">
+    <div class="col-md-6 mt-md-5 pt-md-5 text-center">
+        <i class="bi bi-person text-primary" style="font-size: 10em;"></i>
+        <h1 class="text-primary">User Management App</h1>
+        <p class="text-secondary">The best solution for inhancing your business.</p>
+    </div>
+
+    <div class="col-md-6 p-5">
+        <h2 class="card-title text-primary">Register</h2>
+        <form  novalidate class="needs-validation" (submit)="register(firstname.value, lastname.value, username.value, password.value, confirmPassword.value); $event.preventDefault()">
+            <div class="form-group my-2">
+                <label class="form-label text-secondary" for="firstname">Firstname</label>
+                <input class="form-control" placeholder="Firstname" formControlName="firstname" type="text" id="firstname" #firstname>
+                <div *ngIf="this.validationMessages != undefined &&  this.validationMessages.firstname != undefined" class="text-danger">
+                    {{this.validationMessages.firstname[0]}}
+                </div>        
+            </div>
+            <div class="form-group my-2">
+                <label class="text-secondary" for="lastname">Lastname</label>
+                <input class="form-control" placeholder="Lastname" formControlName="lastname" type="text" id="lastname" #lastname>        
+                <div *ngIf="this.validationMessages != undefined && this.validationMessages.lastname != undefined" class="text-danger">
+                    {{this.validationMessages.lastname[0]}}
+                </div>        
+            </div>
+            <div class="form-group my-2">
+                <label class="text-secondary" for="username">Username</label>
+                <input class="form-control" placeholder="Username" formControlName="username" type="text" id="username" #username>        
+                <div *ngIf="this.validationMessages != undefined &&  this.validationMessages.username != undefined" class="text-danger">
+                    {{this.validationMessages.username[0]}}
+                </div>        
+            </div>
+            <div class="form-group my-2">
+                <label class="text-secondary" for="password">Password</label>
+                <input class="form-control" placeholder="Password" formControlName="password" type="password" id="password" #password>        
+                <div *ngIf="this.validationMessages != undefined && this.validationMessages.password != undefined" class="text-danger">
+                    {{this.validationMessages.password[0]}}
+                </div>        
+            </div>
+            <div class="form-group my-2">
+                <label class="text-secondary" for="confirmPassword">Confirm Password</label>
+                <input class="form-control" placeholder="Confirm Password" formControlName="confirmPassword" type="password" id="confirmPassword" #confirmPassword>        
+                <div *ngIf="this.validationMessages != undefined && this.validationMessages.confirmPassword != undefined" class="text-danger">
+                    {{this.validationMessages.confirmPassword[0]}}
+                </div>        
+            </div>
+            <button type="submit" class="btn btn-primary my-2">Register</button>
+        </form>
+    </div>
+</div>

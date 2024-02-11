@@ -1,0 +1,36 @@
+<app-breadcrumb [paths]="breadcrumbPaths"></app-breadcrumb>
+
+<div class="mx-5 px-3">
+  <div class="row justify-content-center mt-3 mt-md-5">
+    <div class="col-12 col-md-6 text-center">
+      <img *ngIf="imageUrl" class="img-fluid mb-4" [src]="imageUrl" alt="Profile Picture" style="width: 200px; height: 200px;">
+      <img *ngIf="imageUrl == undefined" class="img-fluid mb-4" src="../../../assets/images/profile.jpg" alt="Profile Picture" style="width: 200px; height: 200px;">
+      <div class="row justify-content-center">
+        <a (click)="fileInput.click()" class="btn btn-primary col-6 col-md-4 mx-2 my-3">Update My Photo</a>
+        <input type="file" #fileInput style="display: none" accept="image/jpeg" (change)="onFileSelected($event)">
+          <a routerLink="/admin/profile/edit" class="btn btn-primary col-6 col-md-4 mx-2 my-3">Update My Profile</a>
+        <a routerLink="/admin/profile/password" class="btn btn-primary col-6 col-md-4 mx-2 my-3">Change My Password</a>
+      </div>
+    </div>
+
+    <div class="border col-12 col-md-6 mt-3 mt-md-3 py-3">
+      <h2 class="text-primary text-center mb-4">Profile</h2>
+      <div class="form-group">
+        <label for="firstname">Firstname</label>
+        <input type="text" class="form-control" id="firstname" [value]="profile?.firstname" placeholder="Firstname" disabled>
+      </div>
+      <div class="form-group">
+        <label for="lastname">Lastname</label>
+        <input type="text" class="form-control" id="lastname" [value]="profile?.lastname" placeholder="Lastname" disabled>
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" [value]="profile?.username" placeholder="Username" disabled>
+      </div>
+      <div class="form-group">
+        <label for="type">Type</label>
+        <input type="text" class="form-control" id="type" [value]="profile?.type" placeholder="Type" disabled>
+      </div>
+    </div>
+  </div>
+</div>
